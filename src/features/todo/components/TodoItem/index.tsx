@@ -1,6 +1,7 @@
 import { useSortable } from '@dnd-kit/sortable'
 import { TodoElement } from '@/features/todo/types'
 import { CSS } from '@dnd-kit/utilities'
+import UIButton from '@/components/Button'
 
 export const TodoItem: React.FC<{
   todo: TodoElement
@@ -25,26 +26,20 @@ export const TodoItem: React.FC<{
       <span className={todo.complete ? 'line-through' : ''}>{todo.text}</span>
       <div className="flex">
         {todo.dueDate && (
-          <div className="border border-gray-100 bg-blue-500 p-2 rounded-lg me-2">
+          <div className="border border-gray-100 bg-blue-500 p-2 rounded-lg mr-2">
             <label className="text-white">Due: {todo.dueDate}</label>
           </div>
         )}
-        <button
+        <UIButton
           onClick={() => deleteTodo(todo.id)}
-          className="text-red-100 hover:text-red-700 me-2 bg-red-500 p-2 rounded"
+          variant="danger"
+          className="mr-2"
         >
           Delete
-        </button>
-        <button
-          className="text-green-100 hover:bg-green-800 me-2 bg-green-500 p-2 rounded"
-          onClick={(event) => {
-            event.stopPropagation()
-            event.preventDefault()
-            completeHandler(todo.id)
-          }}
-        >
-          Done
-        </button>
+        </UIButton>
+        <UIButton variant="success" onClick={() => completeHandler(todo.id)}>
+          {todo.complete ? 'Undo' : 'Done'}
+        </UIButton>
       </div>
     </li>
   )

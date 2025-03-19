@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { setLocalStorage } from '../../../utils'
 import { LOGIN_KEY } from '../../../constants'
+import UIButton from '@/components/Button'
 
 type LoginInputs = {
   username: string
@@ -41,10 +42,14 @@ export default function Login() {
 
         <form className="mt-4 space-y-4" onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="username"
+              className="block text-sm font-medium text-gray-700"
+            >
               Username
             </label>
             <input
+              id="username"
               onFocus={() => setLoginError(null)}
               type="username"
               placeholder="Enter your username"
@@ -61,10 +66,14 @@ export default function Login() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
               Password
             </label>
             <input
+              id="password"
               onFocus={() => setLoginError(null)}
               type="password"
               placeholder="Enter your password"
@@ -84,12 +93,14 @@ export default function Login() {
             <p className="mt-2 text-left text-sm text-red-600">{loginError}</p>
           )}
 
-          <button
+          <UIButton
+            data-testid="login-btn"
             type="submit"
-            className="w-full rounded-lg bg-blue-500 p-2 text-white hover:bg-blue-600 transition"
+            variant="primary"
+            className="w-full"
           >
             Login
-          </button>
+          </UIButton>
         </form>
       </div>
     </div>

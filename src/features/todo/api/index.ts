@@ -1,4 +1,4 @@
-import { QUOTES_API_URL } from '../../../constants'
+import { QUOTES_API_URL } from '@/constants'
 
 type QuoteResponse = {
   quote: string

@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, UserConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
@@ -8,5 +8,10 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, './src') }]
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.ts'
   }
-})
+} as UserConfig)
