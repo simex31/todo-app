@@ -1,5 +1,5 @@
 import { useSortable } from '@dnd-kit/sortable'
-import { TodoElement } from '../../types'
+import { TodoElement } from '@/features/todo/types'
 import { CSS } from '@dnd-kit/utilities'
 
 export const TodoItem: React.FC<{

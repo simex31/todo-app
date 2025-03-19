@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigate } from 'react-router-dom'
-import { getLocalStorage } from '../../utils'
-import { LOGIN_KEY } from '../../constants'
+import { getLocalStorage } from '@/utils'
+import { LOGIN_KEY } from '@/constants'
 
 interface AuthGuardProps {
   children: React.ReactNode

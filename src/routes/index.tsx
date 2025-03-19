@@ -1,8 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
-import NotFound from '../components/NotFound'
-import TodoList from '../features/todo'
-import Login from '../features/auth/Login'
-import AuthGuard from '../components/AuthGuard'
+import NotFound from '@/components/NotFound'
+import TodoList from '@/features/todo'
+import Login from '@/features/auth/Login'
+import AuthGuard from '@/components/AuthGuard'
 
 export default function AppRoutes() {
   return (

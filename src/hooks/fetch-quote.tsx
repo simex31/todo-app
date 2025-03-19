@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getRandomQuote } from '../features/todo/api'
+import { getRandomQuote } from '@/features/todo/api'
 
 export const useFetchQuote = () => {
   const [quote, setQuote] = useState('')

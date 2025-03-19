@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
-import { getLocalStorage, setLocalStorage } from '../utils'
-import { TODO_LIST_KEY } from '../constants'
+import { getLocalStorage, setLocalStorage } from '@/utils'
+import { TODO_LIST_KEY } from '@/constants'
 
 interface Todo {
   id: string

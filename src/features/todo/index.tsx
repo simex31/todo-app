@@ -1,5 +1,5 @@
-import { setLocalStorage } from '../../utils'
-import { TODO_LIST_KEY } from '../../constants'
+import { setLocalStorage } from '@/utils'
+import { TODO_LIST_KEY } from '@/constants'
 import {
   DndContext,
   MouseSensor,
@@ -7,8 +7,7 @@ import {
   useSensor
 } from '@dnd-kit/core'
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
-import { useMangateTodo } from '../../hooks/manage-todo'
-import { useFetchQuote } from '../../hooks/fetch-quote'
+import { useFetchQuote, useMangateTodo } from '@/hooks'
 import { TodoItem } from './components/TodoItem'
 
 const TodoList: React.FC = () => {

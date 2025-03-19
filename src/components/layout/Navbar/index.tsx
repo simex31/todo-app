@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { getLocalStorage, setLocalStorage } from '../../../utils'
-import { LOGIN_KEY } from '../../../constants'
+import { getLocalStorage, setLocalStorage } from '@/utils'
+import { LOGIN_KEY } from '@/constants'
 
 export default function Navbar() {
   const navigate = useNavigate()
