@@ -1,6 +1,5 @@
-// src/routes.tsx
 import { Routes, Route } from 'react-router-dom'
-import NotFound from '../features/not-found'
+import NotFound from '../components/NotFound'
 import TodoList from '../features/todo'
 import Login from '../features/auth/Login'
 import AuthGuard from '../components/AuthGuard'

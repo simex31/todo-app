@@ -4,7 +4,7 @@ import { LOGIN_KEY } from '../../../constants'
 
 export default function Navbar() {
   const navigate = useNavigate()
-  const loggedIn = getLocalStorage<boolean>('loggedIn')
+  const loggedIn = getLocalStorage<boolean>(LOGIN_KEY)
 
   const authButtonHandler = () => {
     if (loggedIn) {
