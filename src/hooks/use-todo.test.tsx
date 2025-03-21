@@ -1,8 +1,9 @@
 import { renderHook, act } from '@testing-library/react'
-import { TodoProvider, useTodo } from './'
+import { TodoProvider } from '../features/todo/context'
 import { TODO_LIST_KEY } from '@/constants'
 import { setLocalStorage, getLocalStorage } from '@/utils'
 import { Mock, vi } from 'vitest'
+import { useTodo } from './use-todo'
 
 // Mock local storage functions
 vi.mock('@/utils', () => ({

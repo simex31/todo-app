@@ -1,5 +1,5 @@
 import UIButton from '@/components/Button'
-import { useTodo } from '../../context'
+import { useTodo } from '@/hooks'
 
 const CreateTodo = () => {
   const { addTodo, todoDueDate, newTodo } = useTodo()

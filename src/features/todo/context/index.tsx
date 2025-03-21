@@ -1,9 +1,9 @@
-import React, { createContext, useContext, useRef, useState } from 'react'
+import React, { createContext, useRef, useState } from 'react'
 import { getLocalStorage, setLocalStorage } from '@/utils'
 import { TODO_LIST_KEY } from '@/constants'
 import { TodoContextType, TodoElement } from '../types'
 
-const TodoContext = createContext<TodoContextType | undefined>(undefined)
+export const TodoContext = createContext<TodoContextType | undefined>(undefined)
 
 export const TodoProvider: React.FC<{ children: React.ReactNode }> = ({
   children
@@ -79,30 +79,3 @@ export const TodoProvider: React.FC<{ children: React.ReactNode }> = ({
   )
 }
 
-export const useTodo = () => {
-  const context = useContext(TodoContext)
-  if (!context) {
-    throw new Error('useTodo must be used within a TodoProvider')
-  }
-  const {
-    todos,
-    setTodos,
-    addTodo,
-    deleteTodo,
-    completeHandler,
-    sortTodo,
-    newTodo,
-    todoDueDate
-  } = context
-
-  return {
-    todos,
-    setTodos,
-    addTodo,
-    deleteTodo,
-    completeHandler,
-    sortTodo,
-    newTodo,
-    todoDueDate
-  }
-}

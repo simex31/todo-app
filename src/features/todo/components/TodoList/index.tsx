@@ -3,21 +3,22 @@ import {
   closestCenter,
   DndContext,
   MouseSensor,
-  useSensor
+  useSensor,
+  DragEndEvent
 } from '@dnd-kit/core'
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { TODO_LIST_KEY } from '@/constants'
 import UIButton from '@/components/Button'
-import { useTodo } from '../../context'
 import TodoItem from '../TodoItem'
+import { useTodo } from '@/hooks'
 
-const List = () => {
+const TodoList = () => {
   const { todos, setTodos, deleteTodo, completeHandler, sortTodo } = useTodo()
-  const onDragEnd = (event: any) => {
+  const onDragEnd = (event: DragEndEvent) => {
     const { active, over } = event
-    if (active.id !== over.id) {
+    if (active.id !== over?.id) {
       const oldIndex = todos.findIndex((todo) => todo.id === active.id)
-      const newIndex = todos.findIndex((todo) => todo.id === over.id)
+      const newIndex = todos.findIndex((todo) => todo.id === over?.id)
       const newOrder = [...todos]
       const [movedItem] = newOrder.splice(oldIndex, 1)
       newOrder.splice(newIndex, 0, movedItem)
@@ -66,4 +67,4 @@ const List = () => {
   )
 }
 
-export default List
+export default TodoList
