@@ -7,5 +7,5 @@ export const ACCOUNT_MOCK = {
 }
 export const ROUTES = {
   LOGIN_ROUTE: '/login',
-  BASE_ROUTE: ''
+  BASE_ROUTE: '/'
 }
