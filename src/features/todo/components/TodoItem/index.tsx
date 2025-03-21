@@ -3,7 +3,7 @@ import { TodoElement } from '@/features/todo/types'
 import { CSS } from '@dnd-kit/utilities'
 import UIButton from '@/components/Button'
 
-export const TodoItem: React.FC<{
+const TodoItem: React.FC<{
   todo: TodoElement
   deleteTodo: (id: string) => void
   completeHandler: (id: string) => void
@@ -44,3 +44,5 @@ export const TodoItem: React.FC<{
     </li>
   )
 }
+
+export default TodoItem

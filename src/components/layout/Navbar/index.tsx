@@ -1,15 +1,15 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { getLocalStorage, setLocalStorage } from '@/utils'
-import { LOGIN_KEY } from '@/constants'
+import { LOGIN_KEY, ROUTES } from '@/constants'
 
-export default function Navbar() {
+const Navbar = () => {
   const navigate = useNavigate()
   const loggedIn = getLocalStorage<boolean>(LOGIN_KEY)
 
   const authButtonHandler = () => {
     if (loggedIn) {
       setLocalStorage(LOGIN_KEY, false)
-      navigate('login')
+      navigate(ROUTES.LOGIN_ROUTE)
     }
   }
 
@@ -31,3 +31,5 @@ export default function Navbar() {
     </nav>
   )
 }
+
+export default Navbar

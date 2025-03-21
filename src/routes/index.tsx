@@ -1,22 +1,25 @@
 import { Routes, Route } from 'react-router-dom'
 import NotFound from '@/components/NotFound'
-import TodoList from '@/features/todo'
-import Login from '@/features/auth/Login'
 import AuthGuard from '@/components/AuthGuard'
+import TodoPage from './pages/TodoPage'
+import LoginPage from './pages/LoginPage'
+import { ROUTES } from '@/constants'
 
-export default function AppRoutes() {
+const AppRoutes = () => {
   return (
     <Routes>
       <Route
-        path="/"
+        path={ROUTES.BASE_ROUTE}
         element={
           <AuthGuard>
-            <TodoList />
+            <TodoPage />
           </AuthGuard>
         }
       />
-      <Route path="/login" element={<Login />} />
+      <Route path={ROUTES.LOGIN_ROUTE} element={<LoginPage />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }
+
+export default AppRoutes

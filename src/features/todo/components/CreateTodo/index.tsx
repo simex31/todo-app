@@ -1,13 +1,8 @@
 import UIButton from '@/components/Button'
-import React from 'react'
+import { useTodo } from '../../context'
 
-interface Props {
-  newTodo: React.RefObject<HTMLInputElement | null>
-  todoDueDate: React.RefObject<HTMLInputElement | null>
-  addTodo: () => void
-}
-
-const CreateTodo: React.FC<Props> = ({ newTodo, todoDueDate, addTodo }) => {
+const CreateTodo = () => {
+  const { addTodo, todoDueDate, newTodo } = useTodo()
   return (
     <div className="flex items-center mb-4">
       <input
